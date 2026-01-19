@@ -1,0 +1,15 @@
+[Unit]
+Description=DeepSeek API Proxy
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/deepseek-api
+Environment=DEEPSEEK_API_KEY=你的API密钥  # 请替换为你自己的 API Key
+ExecStart=/root/.nvm/versions/node/v18.20.8/bin/node index.js
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

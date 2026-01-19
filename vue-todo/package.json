@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && scp -r dist/* root@45.128.210.155:/var/www/html/"
+    "deploy": "npm run build && scp -r dist/* root@你的服务器IP:/var/www/html/"
   },
   "dependencies": {
+    "marked": "^15.0.12",
     "vue": "^3.5.24"
   },
   "devDependencies": {
