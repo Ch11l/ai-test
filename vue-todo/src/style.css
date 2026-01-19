@@ -1,0 +1,109 @@
+:root {
+  /* 核心色板 - 赛博道场 */
+  --bg-deep: #050505;
+  --bg-surface: #0a0f16;
+  --bg-card: rgba(16, 24, 39, 0.7);
+
+  --primary-color: #00f3ff;
+  --primary-dim: rgba(0, 243, 255, 0.1);
+  --primary-glow: rgba(0, 243, 255, 0.6);
+
+  --secondary-color: #bc13fe;
+  --secondary-glow: rgba(188, 19, 254, 0.6);
+
+  --accent-color: #0aff60;
+
+  --text-main: #e2e8f0;
+  --text-muted: #64748b;
+  --text-highlight: #f8fafc;
+
+  /* 边框与光效 */
+  --border-tech: 1px solid rgba(0, 243, 255, 0.2);
+  --glass-effect: blur(12px);
+
+  /* 字体设置 */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  /* 建议后续引入 JetBrains Mono 或 Share Tech Mono */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* 全局工具类 */
+.cyber-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-effect);
+  border: var(--border-tech);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  opacity: 0.5;
+}
+
+.cyber-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.15);
+  border-color: rgba(0, 243, 255, 0.5);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-border {
+  position: relative;
+}
+
+.tech-border::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}
