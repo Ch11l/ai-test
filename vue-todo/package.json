@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && scp -r dist/* root@54.168.149.120:/var/www/html/"
+    "deploy": "npm run build && scp -r dist/* root@45.128.210.155:/var/www/html/"
   },
   "dependencies": {
     "vue": "^3.5.24"

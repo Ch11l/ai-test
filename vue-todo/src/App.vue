@@ -15,7 +15,7 @@ const profile = {
     <div class="background-grid"></div>
     
     <header class="main-header">
-      <h1 class="cyber-glitch" data-text="个人数字枢纽">贺吊666</h1>
+      <h1 class="cyber-glitch" data-text="个人数字枢纽">123456</h1>
       <p class="subtitle">神经链接已建立 // 欢迎访问</p>
     </header>
 
