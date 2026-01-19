@@ -24,7 +24,12 @@ dist-ssr
 *.sw?
 
 # 敏感配置文件
-server/*.env
+server/.env
 .env
 .env.local
 .env.*.local
+*.env
+
+# 运行时日志
+request_log.txt
+server/request_log.txt

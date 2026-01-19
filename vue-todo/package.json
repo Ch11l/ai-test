@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n \"API,UI\" -c \"blue,green\" \"npm run server\" \"vite\"",
+    "server": "npm run start --prefix server",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && scp -r dist/* root@你的服务器IP:/var/www/html/"
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.0",
+    "concurrently": "^9.2.1",
     "vite": "^5.4.11"
   }
 }
