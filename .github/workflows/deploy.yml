@@ -23,6 +23,7 @@ jobs:
     # 3. 安装依赖并打包
     - name: Install and Build
       run: |
+        cd vue-todo
         npm install
         npm run build
       # 此时 dist 文件夹已经生成在 GitHub 的虚拟机里了
@@ -34,9 +35,9 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "dist/*"
+        source: "vue-todo/dist/*"   # 👈 告诉它成品在子文件夹里
         target: "/var/www/html"
-        strip_components: 1 # 去掉 dist 这一层目录，直接把内容传进去
+        strip_components: 2         # 👈 这里改成 2 (因为要剥离 vue-todo 和 dist 两层皮)
 
     # 5. (可选) 远程执行命令刷新 Nginx
     - name: Restart Nginx
